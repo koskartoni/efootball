@@ -1,0 +1,24 @@
+cursor_navigation:
+  move_speed: 5
+  precision_threshold: 10
+gamepad:
+  button_mapping:
+    A: A
+    B: B
+    DPAD_DOWN: DPAD_DOWN
+    DPAD_LEFT: DPAD_LEFT
+    DPAD_RIGHT: DPAD_RIGHT
+    DPAD_UP: DPAD_UP
+    LB: LB
+    LT: LT
+    RB: RB
+    RT: RT
+    SELECT: SELECT
+    START: START
+    X: X
+    Y: Y
+  type: xbox
+screen_recognition:
+  check_interval: 0.5
+  confidence_threshold: 0.7
+  max_wait_time: 10.0
