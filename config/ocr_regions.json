@@ -1,0 +1,68 @@
+{
+    "partido_estadio": {
+        "left": 897,
+        "top": 1900,
+        "width": 2904,
+        "height": 244
+    },
+    "lista_jugadores": {
+        "left": 3254,
+        "top": 105,
+        "width": 446,
+        "height": 129
+    },
+    "menu_contrato": [
+        {
+            "left": 2520,
+            "top": 1473,
+            "width": 1056,
+            "height": 369
+        }
+    ],
+    "pantalla_bienvenida": [
+        {
+            "left": 3115,
+            "top": 2001,
+            "width": 624,
+            "height": 57
+        },
+        {
+            "left": 1416,
+            "top": 1934,
+            "width": 993,
+            "height": 177
+        }
+    ],
+    "menu_principal_home_seleccionado": [
+        {
+            "left": 744,
+            "top": 67,
+            "width": 2332,
+            "height": 206
+        }
+    ],
+    "menu_misiones_selec": [
+        {
+            "left": 792,
+            "top": 67,
+            "width": 2265,
+            "height": 211
+        }
+    ],
+    "menu_tienda_selec": [
+        {
+            "left": 782,
+            "top": 72,
+            "width": 2284,
+            "height": 192
+        }
+    ],
+    "menu_noticias_selec": [
+        {
+            "left": 1027,
+            "top": 38,
+            "width": 1790,
+            "height": 259
+        }
+    ]
+}
