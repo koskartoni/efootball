@@ -1,0 +1,257 @@
+{
+    "pantalla_bienvenida": [
+        "pantalla_bienvenida_20250403_172226.png"
+    ],
+    "menu_principal_home_seleccionado": [
+        "menu_principal_home_seleccionado_20250403_172940.png"
+    ],
+    "menu_misiones_selec": [
+        "menu_misiones_selec_20250403_180735.png"
+    ],
+    "menu_tienda_selec": [
+        "menu_tienda_selec_20250403_180754.png"
+    ],
+    "menu_extras_selec": [
+        "menu_extras_selec_20250403_180809.png",
+        "menu_extras_selec_20250403_180814.png"
+    ],
+    "menu_noticias_selec": [
+        "menu_noticias_selec_20250403_180918.png"
+    ],
+    "menu_bandeja_selec": [
+        "menu_bandeja_selec_20250403_180937.png"
+    ],
+    "menu_home_mi_equipo": [
+        "menu_home_mi_equipo_20250403_181016.png"
+    ],
+    "menu_home_contrato": [
+        "menu_home_contrato_20250403_181042.png"
+    ],
+    "menu_home_premijuego": [
+        "menu_home_premijuego_20250403_181108.png"
+    ],
+    "menu_home_estrategia": [
+        "menu_home_estrategia_20250403_181126.png"
+    ],
+    "menu_contrato_jugadores especiales": [
+        "menu_contrato_jugadores especiales_20250403_181223.png"
+    ],
+    "menu_contrato_packs": [
+        "menu_contrato_packs_20250403_181239.png"
+    ],
+    "menu_contrato_boletos": [
+        "menu_contrato_boletos_20250403_181256.png"
+    ],
+    "menu_contrato_jugadores_normales": [
+        "menu_contrato_jugadores_normales_20250403_181317.png"
+    ],
+    "menu_contrato_directores": [
+        "menu_contrato_directores_20250403_181338.png"
+    ],
+    "menu_jugadores_normales_raquel": [
+        "menu_jugadores_normales_raquel_20250403_181443.png"
+    ],
+    "menu_raquel_stats": [
+        "menu_raquel_stats_20250403_181521.png"
+    ],
+    "menu_raquel_habilidades": [
+        "menu_raquel_habilidades_20250403_181544.png"
+    ],
+    "menu_raquel_fichar": [
+        "menu_raquel_fichar_20250403_181611.png"
+    ],
+    "menu_raquel_fichar_G_sel": [
+        "menu_raquel_fichar_G_sel_20250403_181635.png"
+    ],
+    "menu_raquel_fichado": [
+        "menu_raquel_fichado_20250403_181710.png"
+    ],
+    "menu_raquel_fichado2": [
+        "menu_raquel_fichado2_20250403_181732.png"
+    ],
+    "menu_jugadores_normales_ordenar_precio_desc": [
+        "menu_jugadores_normales_ordenar_precio_desc_20250403_181851.png"
+    ],
+    "menu_jugadores_normales_ordenar_valor_desc": [
+        "menu_jugadores_normales_ordenar_valor_desc_20250403_181910.png"
+    ],
+    "menu_jugadores_normales_ordenar_valoracion_desc": [
+        "menu_jugadores_normales_ordenar_valoracion_desc_20250403_181921.png"
+    ],
+    "menu_jugadores_normales_ordenar_posicion_desc": [
+        "menu_jugadores_normales_ordenar_posicion_desc_20250403_181933.png"
+    ],
+    "menu_jugadores_normales_filtrar_clubes": [
+        "menu_jugadores_normales_filtrar_clubes_20250403_182004.png"
+    ],
+    "menu_jugadores_normales_filtrar_categoria": [
+        "menu_jugadores_normales_filtrar_categoria_20250403_182021.png"
+    ],
+    "menu_jugadores_normales_filtrar_nacion": [
+        "menu_jugadores_normales_filtrar_nacion_20250403_182049.png"
+    ],
+    "menu_jugadores_normales_filtrar_posicion": [
+        "menu_jugadores_normales_filtrar_posicion_20250403_182100.png"
+    ],
+    "menu_jugadores_normales_filtrar_precio": [
+        "menu_jugadores_normales_filtrar_precio_20250403_182117.png"
+    ],
+    "menu_jugadores_normales_filtrar_valorv": [
+        "menu_jugadores_normales_filtrar_valorv_20250403_182149.png"
+    ],
+    "menu_jugadores_normales_filtrar_habilidades": [
+        "menu_jugadores_normales_filtrar_habilidades_20250403_182203.png"
+    ],
+    "menu_jugadores_normales_filtrar_estilo": [
+        "menu_jugadores_normales_filtrar_estilo_20250403_182215.png"
+    ],
+    "menu_miequipo_jugadores": [
+        "menu_miequipo_jugadores_20250403_182259.png",
+        "menu_miequipo_jugadores_20250403_182400.png"
+    ],
+    "menu_miequipo_directores": [
+        "menu_miequipo_directores_20250403_182312.png"
+    ],
+    "menu_miequipo_uniformes": [
+        "menu_miequipo_uniformes_20250403_182323.png"
+    ],
+    "menu_miequipo_jugadores_accion_vista": [
+        "menu_miequipo_jugadores_accion_vista_20250403_182438.png"
+    ],
+    "menu_miequipo_jugadores_accion_ordenar": [
+        "menu_miequipo_jugadores_accion_ordenar_20250403_182451.png"
+    ],
+    "menu_miequipo_jugadores_accion_filtrar": [
+        "menu_miequipo_jugadores_accion_filtrar_20250403_182503.png"
+    ],
+    "menu_miequipo_jugadores_accion_ordenar_contratacion_desc": [
+        "menu_miequipo_jugadores_accion_ordenar_contratacion_desc_20250403_182542.png"
+    ],
+    "menu_miequipo_jugadores_accion_ordenar_nombre_desc": [
+        "menu_miequipo_jugadores_accion_ordenar_nombre_desc_20250403_182610.png"
+    ],
+    "menu_miequipo_jugadores_accion_ordenar_posicion_desc": [
+        "menu_miequipo_jugadores_accion_ordenar_posicion_desc_20250403_182623.png"
+    ],
+    "menu_miequipo_jugadores_accion_ordenar_valoracion_desc": [
+        "menu_miequipo_jugadores_accion_ordenar_valoracion_desc_20250403_182640.png"
+    ],
+    "menu_miequipo_jugadores_accion_ordenar_valor_desc": [
+        "menu_miequipo_jugadores_accion_ordenar_valor_desc_20250403_182653.png"
+    ],
+    "menu_miequipo_jugadores_accion_ordenar_nivel_desc": [
+        "menu_miequipo_jugadores_accion_ordenar_nivel_desc_20250403_182715.png"
+    ],
+    "menu_miequipo_jugadores_accion_ordenar_valor_ascen": [
+        "menu_miequipo_jugadores_accion_ordenar_valor_ascen_20250403_182809.png"
+    ],
+    "menu_miequipo_jugadores_ordenados_ascen": [
+        "menu_miequipo_jugadores_ordenados_ascen_20250403_182857.png"
+    ],
+    "menu_miequipo_jugadores_ordenados_ascen_pos1": [
+        "menu_miequipo_jugadores_ordenados_ascen_pos1_20250403_182945.png"
+    ],
+    "menu_miequipo_jugadores_ordenados_ascen_pos2": [
+        "menu_miequipo_jugadores_ordenados_ascen_pos2_20250403_182955.png"
+    ],
+    "menu_miequipo_jugadores_ordenados_ascen_pos3": [
+        "menu_miequipo_jugadores_ordenados_ascen_pos3_20250403_183007.png"
+    ],
+    "menu_miequipo_jugadores_ordenados_ascen_pos4": [
+        "menu_miequipo_jugadores_ordenados_ascen_pos4_20250403_183017.png"
+    ],
+    "menu_miequipo_jugadores_raquel_stats": [
+        "menu_miequipo_jugadores_raquel_stats_20250403_183117.png"
+    ],
+    "menu_miequipo_jugadores_raquel_habil": [
+        "menu_miequipo_jugadores_raquel_habil_20250403_183133.png"
+    ],
+    "menu_miequipo_jugadores_raquel_acciones": [
+        "menu_miequipo_jugadores_raquel_acciones_20250403_183213.png"
+    ],
+    "menu_miequipo_jugadores_raquel_acciones_entren": [
+        "menu_miequipo_jugadores_raquel_acciones_entren_20250403_183227.png"
+    ],
+    "menu_miequipo_jugadores_raquel_acciones_progresion_selec": [
+        "menu_miequipo_jugadores_raquel_acciones_progresion_selec_20250403_183247.png"
+    ],
+    "menu_miequipo_jugadores_raquel_entreHabili": [
+        "menu_miequipo_jugadores_raquel_entreHabili_20250403_183348.png"
+    ],
+    "menu_miequipo_jugadores_raquel_entreHabili_a\u00f1adir": [
+        "menu_miequipo_jugadores_raquel_entreHabili_a\u00f1adir_20250403_183425.png",
+        "menu_miequipo_jugadores_raquel_entreHabili_a\u00f1adir_20250403_183513.png"
+    ],
+    "menu_miequipo_jugadores_raquel_entreHabili_a\u00f1adir_mensaje": [
+        "menu_miequipo_jugadores_raquel_entreHabili_a\u00f1adir_mensaje_20250403_183532.png"
+    ],
+    "menu_miequipo_jugadores_raquel_entreHabili_a\u00f1adir_confirmar": [
+        "menu_miequipo_jugadores_raquel_entreHabili_a\u00f1adir_confirmar_20250403_183546.png"
+    ],
+    "menu_miequipo_jugadores_raquel_entreHabili_a\u00f1adida": [
+        "menu_miequipo_jugadores_raquel_entreHabili_a\u00f1adida_20250403_183609.png"
+    ],
+    "menu_partido_torneo": [
+        "menu_partido_torneo_20250403_183729.png"
+    ],
+    "menu_eventos_JcJ": [
+        "menu_eventos_JcJ_20250403_183812.png"
+    ],
+    "menu_eventos_IA": [
+        "menu_eventos_IA_20250403_183825.png"
+    ],
+    "menu_eventos_IA_partido1": [
+        "menu_eventos_IA_partido1_20250403_183843.png"
+    ],
+    "menu_eventos_IA_partido2": [
+        "menu_eventos_IA_partido2_20250403_183852.png"
+    ],
+    "menu_eventos_IA_partido3": [
+        "menu_eventos_IA_partido3_20250403_183900.png"
+    ],
+    "menu_eventos_IA_participar": [
+        "menu_eventos_IA_participar_20250403_183934.png"
+    ],
+    "menu_eventos_IA_participando_0_puntos": [
+        "menu_eventos_IA_participando_0_puntos_20250403_184045.png"
+    ],
+    "menu_eventos_IA_participando_opciones": [
+        "menu_eventos_IA_participando_opciones_20250403_184105.png"
+    ],
+    "menu_eventos_IA_participando_opciones_controles_ia_sel": [
+        "menu_eventos_IA_participando_opciones_controles_ia_sel_20250403_184142.png"
+    ],
+    "menu_eventos_IA_participando_opciones_controles_usuario_sel": [
+        "menu_eventos_IA_participando_opciones_controles_usuario_sel_20250403_184157.png"
+    ],
+    "partido_jugando_estadio": [
+        "partido_jugando_estadio_20250403_184306.png"
+    ],
+    "partido_jugando_uniforme": [
+        "partido_jugando_uniforme_20250403_184324.png"
+    ],
+    "partido_jugando_jugar_estrategia": [
+        "partido_jugando_jugar_estrategia_20250403_184348.png"
+    ],
+    "partido_jugando_estrategia": [
+        "partido_jugando_estrategia_20250403_184403.png"
+    ],
+    "partido_jugando_final": [
+        "partido_jugando_final_20250403_193026.png"
+    ],
+    "partido_jugando_final2": [
+        "partido_jugando_final2_20250403_193039.png"
+    ],
+    "partido_jugando_final_premio1": [
+        "partido_jugando_final_premio1_20250403_193056.png"
+    ],
+    "partido_jugando_final_pase_partido": [
+        "partido_jugando_final_pase_partido_20250403_193115.png"
+    ],
+    "partido_recompensa_puntos": [
+        "partido_recompensa_puntos_20250403_193143.png"
+    ],
+    "partido_recompensa_premio": [
+        "partido_recompensa_premio_20250403_193156.png"
+    ]
+}
