@@ -1,9 +1,9 @@
 """
-Optimized Screen Recognizer for eFootball Automation using JSON Mapping
+Optimized Screen Recognizer for eFootball Automation using JSON Mapping and OCR fallback
 
-Este módulo utiliza mss para capturar la pantalla y carga las plantillas
-desde un archivo JSON (templates_mapping.json) para realizar la detección
-de pantallas del juego.
+Este módulo utiliza mss para capturar la pantalla, carga las plantillas desde
+el archivo JSON (templates_mapping.json) para realizar la detección visual, y si ésta falla,
+usa regiones OCR definidas en el archivo ocr_regions.json para extraer texto en tiempo real.
 """
 
 import cv2
@@ -12,15 +12,12 @@ import mss
 import os
 import json
 from enum import Enum
+import pytesseract
 
-# Opcional: Puedes conservar el enum para tener valores estándar, pero aquí lo usaremos para referencia.
-class GameScreen(Enum):
-    UNKNOWN = "unknown"
-    # Los demás valores se definirán según las etiquetas que utilices en el JSON
-
-# Ruta del archivo JSON que contiene el mapping de plantillas.
+# Definir rutas del proyecto
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEMPLATES_MAPPING_FILE = os.path.join(PROJECT_DIR, "templates_mapping.json")
+OCR_MAPPING_FILE = os.path.join(PROJECT_DIR, "ocr_regions.json")
 
 def load_templates_mapping():
     """Carga el mapping de plantillas desde el archivo JSON."""
@@ -28,8 +25,55 @@ def load_templates_mapping():
         with open(TEMPLATES_MAPPING_FILE, "r", encoding="utf-8") as f:
             return json.load(f)
     else:
-        print("No se encontró el archivo de mapping, usando diccionario vacío.")
+        print("No se encontró el archivo de mapping de plantillas, usando diccionario vacío.")
         return {}
+
+def load_ocr_mapping():
+    """Carga el mapping de zonas OCR desde el archivo JSON."""
+    if os.path.exists(OCR_MAPPING_FILE):
+        with open(OCR_MAPPING_FILE, "r", encoding="utf-8") as f:
+            return json.load(f)
+    else:
+        print("No se encontró el archivo de mapping OCR, usando diccionario vacío.")
+        return {}
+
+def extract_text_from_region(region, monitor=1):
+    """
+    Captura una región específica de la pantalla y aplica OCR para extraer el texto.
+
+    Args:
+        region (dict): Diccionario con 'left', 'top', 'width' y 'height'.
+        monitor (int): Número del monitor (1-indexado).
+
+    Returns:
+        Texto extraído (str) limpio.
+    """
+    with mss.mss() as sct:
+        sct_img = sct.grab(region)
+        img = np.array(sct_img)
+        img_bgr = cv2.cvtColor(img, cv2.COLOR_BGRA2BGR)
+        gray = cv2.cvtColor(img_bgr, cv2.COLOR_BGR2GRAY)
+        text = pytesseract.image_to_string(gray, lang="eng")
+        return text.strip()
+
+def capture_screen(region=None, monitor=1):
+    """
+    Captura la pantalla (o una región específica) usando mss.
+
+    Args:
+        region (dict o None): Diccionario con 'left', 'top', 'width' y 'height'. Si es None, se captura el monitor completo.
+        monitor (int): Número del monitor a capturar (1-indexado).
+
+    Returns:
+        Imagen capturada (numpy array en formato BGR).
+    """
+    with mss.mss() as sct:
+        if region is None:
+            region = sct.monitors[monitor]
+        sct_img = sct.grab(region)
+        img = np.array(sct_img)
+        img_bgr = cv2.cvtColor(img, cv2.COLOR_BGRA2BGR)
+        return img_bgr
 
 class ScreenRecognizer:
     def __init__(self, monitor=1, templates_dir="images", capture_region=None):
@@ -39,14 +83,13 @@ class ScreenRecognizer:
         Args:
             monitor (int): Índice del monitor a capturar (1-indexado).
             templates_dir (str): Directorio que contiene las imágenes de plantilla.
-            capture_region (dict o None): Región de captura definida como
-                {"left": int, "top": int, "width": int, "height": int}.
+            capture_region (dict o None): Región de captura definida como {"left": int, "top": int, "width": int, "height": int}.
                 Si es None, se captura todo el monitor.
         """
         self.monitor = monitor
         self.templates_dir = templates_dir
         self.capture_region = capture_region
-        self.templates = {}  # Diccionario que almacenará listas de plantillas para cada etiqueta
+        self.templates = {}  # Diccionario: estado -> lista de imágenes (en escala de grises)
         self.load_templates_from_json()
 
     def load_templates_from_json(self):
@@ -80,13 +123,7 @@ class ScreenRecognizer:
         Returns:
             Imagen capturada en formato BGR (numpy array).
         """
-        with mss.mss() as sct:
-            monitor_full = sct.monitors[self.monitor]
-            region = self.capture_region if self.capture_region else monitor_full
-            sct_img = sct.grab(region)
-            img = np.array(sct_img)
-            img_bgr = cv2.cvtColor(img, cv2.COLOR_BGRA2BGR)
-            return img_bgr
+        return capture_screen(region=self.capture_region, monitor=self.monitor)
 
     def find_template(self, screen_gray, template_gray, threshold=0.7):
         """
@@ -98,7 +135,7 @@ class ScreenRecognizer:
             threshold (float): Umbral mínimo de coincidencia (valor entre 0 y 1).
 
         Returns:
-            Tuple (x, y, w, h) si se encuentra la plantilla; de lo contrario, None.
+            Tuple ((x, y, w, h), match_val) si se encuentra la plantilla; de lo contrario, (None, 0).
         """
         result = cv2.matchTemplate(screen_gray, template_gray, cv2.TM_CCOEFF_NORMED)
         _, max_val, _, max_loc = cv2.minMaxLoc(result)
@@ -121,7 +158,6 @@ class ScreenRecognizer:
         screen_gray = cv2.cvtColor(screen_bgr, cv2.COLOR_BGR2GRAY)
 
         best_match = ("unknown", 0.0)
-        # Recorre todos los estados y sus plantillas
         for state, template_list in self.templates.items():
             for template_gray in template_list:
                 match, match_val = self.find_template(screen_gray, template_gray, threshold)
@@ -135,18 +171,36 @@ class ScreenRecognizer:
             print("Pantalla actual detectada: unknown")
             return "unknown"
 
-    def show_capture(self):
+    def detect_screen_with_ocr_from_file(self, threshold=0.7):
         """
-        Para pruebas: muestra la imagen capturada en una ventana.
+        Método híbrido para detectar la pantalla: primero se intenta el matching visual,
+        y si no se obtiene un resultado (estado "unknown"), se cargan las zonas OCR definidas
+        en ocr_regions.json y se extrae texto en cada una. Si se obtiene un texto significativo,
+        se devuelve ese estado.
+
+        Args:
+            threshold (float): Umbral para el matching visual.
+
+        Returns:
+            Estado detectado (str).
         """
-        screen = self.capture_screen()
-        cv2.imshow("Captura de Pantalla", screen)
-        cv2.waitKey(0)
-        cv2.destroyAllWindows()
+        state = self.detect_screen(threshold=threshold)
+        if state != "unknown":
+            return state
+        # Si no se detecta mediante matching, intenta OCR
+        ocr_mapping = load_ocr_mapping()
+        for state_name, region in ocr_mapping.items():
+            text = extract_text_from_region(region, monitor=self.monitor)
+            if text and len(text) > 3:
+                print(f"Estado detectado por OCR: {state_name} (texto: {text})")
+                return state_name
+        print("Pantalla detectada: unknown")
+        return "unknown"
 
 if __name__ == "__main__":
-    # Ejemplo: define la región de captura si es necesario.
+    # Define la región de captura si es necesario; si no, puede ser None para capturar todo el monitor.
     region_juego = {"left": 0, "top": 0, "width": 3840, "height": 2160}
     recognizer = ScreenRecognizer(monitor=1, templates_dir=os.path.join(PROJECT_DIR, "images"), capture_region=region_juego)
-    current_state = recognizer.detect_screen(threshold=0.7)
-    print("Estado final detectado:", current_state)
+    # Usa el método híbrido que intenta matching visual y, en caso de fallo, OCR.
+    detected_state = recognizer.detect_screen_with_ocr_from_file(threshold=0.7)
+    print("Estado final detectado:", detected_state)
