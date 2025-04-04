@@ -2,41 +2,44 @@
 
 ## Descripción
 
-Esta aplicación automatiza diversas acciones dentro del juego eFootball, incluyendo:
+Esta aplicación automatiza diversas acciones dentro del juego eFootball. La solución ha evolucionado para incorporar nuevas técnicas de reconocimiento de pantalla, incluyendo:
+- Detección visual basada en plantillas cargadas dinámicamente desde un archivo JSON.
+- Fallback mediante OCR en zonas definidas, para mejorar la detección en pantallas dinámicas o con animaciones.
+- Gestión avanzada de plantillas y zonas OCR mediante una interfaz gráfica (GUI) en Tkinter.
 
-1. Fichar jugadores específicos
-2. Realizar entrenamientos de habilidad a jugadores
-3. Jugar partidos contra la CPU para completar eventos
-4. Saltar banners iniciales hasta llegar al menú principal
+La aplicación está diseñada para facilitar la automatización de acciones como fichar jugadores, entrenar, jugar partidos y navegar en menús complejos, aprovechando además la filosofía visual del juego para resaltar la opción seleccionada.
 
 ## Nuevas Características
 
-Esta versión mejorada incluye:
+### 1. Reconocimiento de Pantalla con OCR Fallback
+- **Matching de Plantillas:**  
+  Se utiliza mss y OpenCV para capturar la pantalla y comparar con plantillas almacenadas en `templates_mapping.json`.
+- **OCR Dinámico:**  
+  Cuando el matching visual falla, se aplica OCR en regiones específicas definidas en `ocr_regions.json` para extraer texto y detectar el estado de la pantalla.
 
-### 1. Interfaz de Configuración de Acciones
+### 2. Gestión y Actualización de Plantillas y Zonas OCR
+- **Estrategia de Nombramiento:**  
+  Se recomienda un esquema de nombres que incluya:
+  - Nombre base del estado (ej.: `menu_home_contrato`)
+  - Sufijo que indique la condición (por ejemplo, `_normal` para la versión sin resaltar y `_sel` para la versión resaltada)
+  - Marca de tiempo (formato `YYYYMMDD_HHMMSS`)
+  - Opcional: índice o versión si se generan varias capturas para el mismo estado.
 
-- Sistema completo para definir secuencias de acciones personalizadas
-- Interfaz de línea de comandos y gráfica para gestionar configuraciones
-- Capacidad para guardar y cargar secuencias predefinidas
+  **Ejemplo:**  
+  `menu_home_contrato_sel_20250403_181042.png`
 
-### 2. Sistema Mejorado de Navegación por Cursor
+- **Template Manager GUI:**  
+  El módulo `template_manager_gui.py` permite:
+  - Capturar plantillas desde pantalla o seleccionar imágenes existentes.
+  - Marcar y confirmar interactivamente una o varias zonas OCR sobre una imagen.
+  - Guardar la información en archivos JSON (`templates_mapping.json` y `ocr_regions.json`), facilitando la reutilización y actualización de las capturas sin renombrarlas manualmente.
 
-- Control preciso del cursor con aceleración/desaceleración adaptativa
-- Reconocimiento avanzado de elementos en pantalla
-- Navegación inteligente por menús complejos
-
-### 3. Sistema de Archivos de Configuración
-
-- Perfiles de configuración personalizables
-- Plantillas para diferentes escenarios del juego
-- Copias de seguridad y restauración de configuraciones
-
-### 4. Asistente de Configuración
-
-- Interfaz gráfica intuitiva para crear secuencias
-- Grabación automática de acciones
-- Detección de elementos interactivos en pantalla
-- Edición visual de secuencias de acciones
+### 3. Interfaz Gráfica y Configuración
+- Se ofrece una GUI intuitiva para gestionar plantillas y zonas OCR, permitiendo:
+  - Seleccionar el origen de la imagen (captura en vivo o archivo).
+  - Previsualizar la imagen cargada.
+  - Marcar y confirmar una o varias regiones OCR mediante una interfaz basada en Tkinter.
+  - Asignar nombres a las plantillas y zonas OCR siguiendo la estrategia de nombramiento definida.
 
 ## Requisitos
 
@@ -44,53 +47,24 @@ Esta versión mejorada incluye:
 - Python 3.8 o superior
 - Gamepad compatible (Xbox o DualSense)
 - eFootball instalado
+- Dependencias de Python:
+  - `mss`
+  - `opencv-python`
+  - `pytesseract`
+  - `Pillow`
 
 ## Instalación
 
-1. Extraiga todos los archivos del ZIP en una carpeta
-2. Ejecute `install.bat` para instalar las dependencias necesarias
-
-## Uso
-
-### Asistente de Configuración
-
-```
-wizard.bat
-```
-
-El asistente le guiará en la creación de secuencias personalizadas para automatizar diferentes acciones en el juego.
-
-### Línea de Comandos
-
-```
-run.bat [comando] [opciones]
-```
-
-Comandos disponibles:
-
-- `skip`: Salta los banners iniciales
-- `sign`: Ficha jugadores específicos
-- `train`: Realiza entrenamientos de habilidad
-- `play`: Juega partidos contra la CPU
-- `all`: Ejecuta todas las funcionalidades
-- `config`: Gestiona configuraciones
-- `sequence`: Ejecuta una secuencia personalizada
-
-Ejemplos:
-
-```
-run.bat sign --position Delantero --club Barcelona
-run.bat train "Raquel"
-run.bat play --event
-run.bat sequence "mi_secuencia_personalizada"
-```
+1. Extraiga todos los archivos del ZIP en una carpeta.
+2. Ejecute `install.bat` para instalar las dependencias necesarias (o use `pip install -r requirements.txt`).
 
 ## Estructura de Directorios
 
 - `src/`: Código fuente de la aplicación
   - `config_interface/`: Módulos de interfaz de configuración
   - `gamepad_controller.py`: Control del gamepad
-  - `screen_recognizer.py`: Reconocimiento de pantalla
+  - **`screen_recognizer.py`**: Módulo de reconocimiento de pantalla con OCR fallback
+  - **`template_manager_gui.py`**: Interfaz gráfica para gestionar plantillas y zonas OCR
   - `cursor_navigator.py`: Navegación por cursor
   - `config_system.py`: Sistema de archivos de configuración
   - `sequence_wizard.py`: Asistente de configuración
@@ -101,25 +75,48 @@ run.bat sequence "mi_secuencia_personalizada"
   - `sequences/`: Secuencias guardadas
   - `templates/`: Plantillas de configuración
 
-## Solución de Problemas
+## Uso
 
-### El gamepad no es detectado
+### Asistente de Configuración
 
-- Asegúrese de que el gamepad esté conectado antes de iniciar la aplicación
-- Verifique que los controladores del gamepad estén instalados correctamente
-- Pruebe con otro puerto USB
+Ejecute:
+`wizard.bat`
 
-### La aplicación no reconoce elementos en pantalla
 
-- Asegúrese de que eFootball esté en modo de pantalla completa
-- Verifique que la resolución del juego sea compatible (1920x1080 recomendado)
-- Intente recalibrar el reconocimiento de pantalla usando el asistente
+El asistente lo guiará en la creación de secuencias personalizadas para automatizar acciones en el juego.
 
-### Errores en la ejecución de secuencias
+### Línea de Comandos
 
-- Verifique que las secuencias estén correctamente configuradas
-- Asegúrese de que el juego esté en el menú correcto antes de iniciar la secuencia
-- Intente aumentar los tiempos de espera en las acciones
+Utilice:
+`run.bat [comando] [opciones]`
+
+
+Comandos disponibles:
+- `skip`: Salta los banners iniciales
+- `sign`: Ficha jugadores específicos
+- `train`: Realiza entrenamientos de habilidad
+- `play`: Juega partidos contra la CPU
+- `all`: Ejecuta todas las funcionalidades
+- `config`: Gestiona configuraciones
+- `sequence`: Ejecuta una secuencia personalizada
+
+**Ejemplos:**
+`run.bat sign --position Delantero --club Barcelona run.bat train "Raquel" run.bat play --event run.bat sequence "mi_secuencia_personalizada"`
+
+
+
+## Pruebas y Solución de Problemas
+
+### Reconocimiento de Pantalla y OCR
+- Verifique que eFootball esté en modo pantalla completa y que la resolución sea compatible.
+- En caso de variaciones o animaciones, el sistema aplicará OCR en las regiones definidas en `ocr_regions.json`.
+- Use el módulo `template_manager_gui.py` para actualizar o marcar nuevas zonas OCR según sea necesario.
+
+### Plantillas y Nombramiento
+- Asegúrese de que las plantillas siguen el esquema de nombres:  
+  `[estado]_[condición]_[timestamp].png`  
+  Ejemplo: `menu_home_contrato_sel_20250403_181042.png`
+- Actualice el JSON (`templates_mapping.json`) usando la herramienta de gestión para mantener la coherencia.
 
 ## Contacto y Soporte
 
