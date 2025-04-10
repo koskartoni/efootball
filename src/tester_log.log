@@ -66,3 +66,79 @@
 2025-04-10 13:41:43,566 - INFO - Gestor de Plantillas lanzado con PID: 24560
 2025-04-10 13:44:15,250 - INFO - Resultado Reconocimiento: {'method': 'template', 'state': 'menu_home_mi_equipo', 'confidence': 0.7753597497940063, 'ocr_results': None, 'detection_time_s': 9.906982183456421}
 2025-04-10 13:44:27,126 - WARNING - NEGACIÓN USUARIO: Detección de 'menu_home_mi_equipo' es INCORRECTA.
+2025-04-10 15:41:24,973 - INFO - Tester GUI inicializado.
+2025-04-10 16:35:02,470 - INFO - Tester GUI inicializado.
+2025-04-10 16:35:16,977 - INFO - Resultado Reconocimiento: {'method': 'template', 'state': 'pantalla_bienvenida', 'confidence': 0.9998437166213989, 'ocr_results': None, 'detection_time_s': 9.440857648849487}
+2025-04-10 16:36:14,619 - INFO - CONFIRMACIÓN USUARIO: Detección de 'pantalla_bienvenida' es CORRECTA.
+2025-04-10 16:36:50,301 - INFO - Resultado Reconocimiento: {'method': 'template', 'state': 'menu_home_partido', 'confidence': 0.8420581817626953, 'ocr_results': None, 'detection_time_s': 9.66516923904419}
+2025-04-10 16:36:52,903 - INFO - CONFIRMACIÓN USUARIO: Detección de 'menu_home_partido' es CORRECTA.
+2025-04-10 16:37:09,154 - INFO - Resultado Reconocimiento: {'method': 'template', 'state': 'menu_home_partido', 'confidence': 0.9850109219551086, 'ocr_results': None, 'detection_time_s': 9.892031192779541}
+2025-04-10 16:37:12,874 - INFO - CONFIRMACIÓN USUARIO: Detección de 'menu_home_partido' es CORRECTA.
+2025-04-10 16:37:30,971 - INFO - Resultado Reconocimiento: {'method': 'template', 'state': 'menu_partido_torneo', 'confidence': 0.8265371322631836, 'ocr_results': None, 'detection_time_s': 9.425892353057861}
+2025-04-10 16:37:33,560 - INFO - CONFIRMACIÓN USUARIO: Detección de 'menu_partido_torneo' es CORRECTA.
+2025-04-10 16:37:48,402 - INFO - Resultado Reconocimiento: {'method': 'unknown', 'state': 'unknown', 'confidence': None, 'ocr_results': None, 'detection_time_s': 9.549794673919678}
+2025-04-10 16:38:52,500 - INFO - Intentando lanzar: C:\Users\koska\OneDrive\Documentos\DOCUMENTOS_OSKAR\efootball_automation_mejorado_20250403_022745\src\template_manager_gui.py
+2025-04-10 16:38:52,510 - INFO - Gestor de Plantillas lanzado con PID: 9784
+2025-04-10 16:39:39,858 - ERROR - Intento de recarga fallido: método reload_data() no encontrado.
+2025-04-10 16:39:51,013 - INFO - Resultado Reconocimiento: {'method': 'unknown', 'state': 'unknown', 'confidence': None, 'ocr_results': None, 'detection_time_s': 9.65950083732605}
+2025-04-10 16:40:01,708 - INFO - CORRECCIÓN USUARIO: Detección fue 'unknown', estado correcto indicado: 'menu_principal_home_seleccionado'.
+2025-04-10 16:40:20,510 - INFO - Resultado Reconocimiento: {'method': 'unknown', 'state': 'unknown', 'confidence': None, 'ocr_results': None, 'detection_time_s': 9.925126075744629}
+2025-04-10 16:40:53,243 - INFO - CORRECCIÓN USUARIO: Detección fue 'unknown', estado correcto indicado: 'menu_eventos_JcJ'.
+2025-04-10 16:41:05,031 - INFO - Intentando lanzar: C:\Users\koska\OneDrive\Documentos\DOCUMENTOS_OSKAR\efootball_automation_mejorado_20250403_022745\src\template_manager_gui.py
+2025-04-10 16:41:05,040 - INFO - Gestor de Plantillas lanzado con PID: 27908
+2025-04-10 16:41:53,634 - INFO - Intentando lanzar: C:\Users\koska\OneDrive\Documentos\DOCUMENTOS_OSKAR\efootball_automation_mejorado_20250403_022745\src\template_manager_gui.py
+2025-04-10 16:41:53,644 - INFO - Gestor de Plantillas lanzado con PID: 12212
+2025-04-10 16:42:43,477 - INFO - Resultado Reconocimiento: {'method': 'template', 'state': 'menu_eventos_IA', 'confidence': 0.8142162561416626, 'ocr_results': None, 'detection_time_s': 9.433559656143188}
+2025-04-10 16:42:47,413 - INFO - CONFIRMACIÓN USUARIO: Detección de 'menu_eventos_IA' es CORRECTA.
+2025-04-10 16:43:02,627 - INFO - Resultado Reconocimiento: {'method': 'unknown', 'state': 'unknown', 'confidence': None, 'ocr_results': None, 'detection_time_s': 9.609555006027222}
+2025-04-10 16:43:07,385 - INFO - CORRECCIÓN USUARIO: Detección fue 'unknown', estado correcto indicado: 'menu_eventos_JcJ'.
+2025-04-10 16:43:27,103 - INFO - Resultado Reconocimiento: {'method': 'template', 'state': 'menu_eventos_IA_partido1', 'confidence': 0.8025475740432739, 'ocr_results': None, 'detection_time_s': 9.573524475097656}
+2025-04-10 16:43:29,976 - INFO - CONFIRMACIÓN USUARIO: Detección de 'menu_eventos_IA_partido1' es CORRECTA.
+2025-04-10 16:43:44,891 - INFO - Resultado Reconocimiento: {'method': 'template', 'state': 'menu_eventos_IA_partido2', 'confidence': 0.8047442436218262, 'ocr_results': None, 'detection_time_s': 9.38197112083435}
+2025-04-10 16:43:46,340 - INFO - CONFIRMACIÓN USUARIO: Detección de 'menu_eventos_IA_partido2' es CORRECTA.
+2025-04-10 16:44:00,472 - INFO - Resultado Reconocimiento: {'method': 'template', 'state': 'menu_eventos_IA_partido3', 'confidence': 0.8192946910858154, 'ocr_results': None, 'detection_time_s': 9.46504020690918}
+2025-04-10 16:44:01,687 - INFO - CONFIRMACIÓN USUARIO: Detección de 'menu_eventos_IA_partido3' es CORRECTA.
+2025-04-10 16:44:17,249 - INFO - Resultado Reconocimiento: {'method': 'unknown', 'state': 'unknown', 'confidence': None, 'ocr_results': None, 'detection_time_s': 9.420515537261963}
+2025-04-10 16:44:29,582 - INFO - CORRECCIÓN USUARIO: Detección fue 'unknown', estado correcto indicado: 'menu_eventos_IA_participar'.
+2025-04-10 16:44:31,162 - INFO - Intentando lanzar: C:\Users\koska\OneDrive\Documentos\DOCUMENTOS_OSKAR\efootball_automation_mejorado_20250403_022745\src\template_manager_gui.py
+2025-04-10 16:44:31,172 - INFO - Gestor de Plantillas lanzado con PID: 28808
+2025-04-10 16:45:18,698 - INFO - Resultado Reconocimiento: {'method': 'template', 'state': 'menu_eventos_IA_participando_0_puntos', 'confidence': 0.9270303249359131, 'ocr_results': None, 'detection_time_s': 9.391111850738525}
+2025-04-10 16:45:22,272 - INFO - CONFIRMACIÓN USUARIO: Detección de 'menu_eventos_IA_participando_0_puntos' es CORRECTA.
+2025-04-10 16:45:54,015 - INFO - Resultado Reconocimiento: {'method': 'template', 'state': 'partido_jugando_estrategia', 'confidence': 0.9447696805000305, 'ocr_results': None, 'detection_time_s': 9.418192386627197}
+2025-04-10 16:46:01,859 - INFO - CONFIRMACIÓN USUARIO: Detección de 'partido_jugando_estrategia' es CORRECTA.
+2025-04-10 16:46:22,617 - INFO - Resultado Reconocimiento: {'method': 'unknown', 'state': 'unknown', 'confidence': None, 'ocr_results': None, 'detection_time_s': 9.433831214904785}
+2025-04-10 16:46:27,764 - INFO - Intentando lanzar: C:\Users\koska\OneDrive\Documentos\DOCUMENTOS_OSKAR\efootball_automation_mejorado_20250403_022745\src\template_manager_gui.py
+2025-04-10 16:46:27,774 - INFO - Gestor de Plantillas lanzado con PID: 27556
+2025-04-10 18:10:46,512 - INFO - Resultado Reconocimiento: {'method': 'unknown', 'state': 'unknown', 'confidence': None, 'ocr_results': None, 'detection_time_s': 9.45603084564209}
+2025-04-10 18:10:50,680 - INFO - Intentando lanzar: C:\Users\koska\OneDrive\Documentos\DOCUMENTOS_OSKAR\efootball_automation_mejorado_20250403_022745\src\template_manager_gui.py
+2025-04-10 18:10:50,690 - INFO - Gestor de Plantillas lanzado con PID: 26556
+2025-04-10 18:13:13,670 - INFO - Resultado Reconocimiento: {'method': 'template', 'state': 'menu_eventos_IA_participando_0_puntos', 'confidence': 0.9247759580612183, 'ocr_results': None, 'detection_time_s': 9.422545671463013}
+2025-04-10 18:13:15,904 - INFO - CONFIRMACIÓN USUARIO: Detección de 'menu_eventos_IA_participando_0_puntos' es CORRECTA.
+2025-04-10 18:13:44,834 - INFO - Resultado Reconocimiento: {'method': 'unknown', 'state': 'unknown', 'confidence': None, 'ocr_results': None, 'detection_time_s': 10.562265396118164}
+2025-04-10 18:14:10,528 - INFO - CORRECCIÓN USUARIO: Detección fue 'unknown', estado correcto indicado: 'partido_jugando_estadio'.
+2025-04-10 18:14:12,865 - INFO - Intentando lanzar: C:\Users\koska\OneDrive\Documentos\DOCUMENTOS_OSKAR\efootball_automation_mejorado_20250403_022745\src\template_manager_gui.py
+2025-04-10 18:14:12,876 - INFO - Gestor de Plantillas lanzado con PID: 26808
+2025-04-10 18:15:14,113 - INFO - Resultado Reconocimiento: {'method': 'unknown', 'state': 'unknown', 'confidence': None, 'ocr_results': None, 'detection_time_s': 10.123246908187866}
+2025-04-10 18:15:25,366 - INFO - CORRECCIÓN USUARIO: Detección fue 'unknown', estado correcto indicado: 'partido_jugando_uniforme'.
+2025-04-10 18:15:26,953 - INFO - Intentando lanzar: C:\Users\koska\OneDrive\Documentos\DOCUMENTOS_OSKAR\efootball_automation_mejorado_20250403_022745\src\template_manager_gui.py
+2025-04-10 18:15:26,963 - INFO - Gestor de Plantillas lanzado con PID: 19120
+2025-04-10 18:16:19,144 - INFO - Resultado Reconocimiento: {'method': 'unknown', 'state': 'unknown', 'confidence': None, 'ocr_results': None, 'detection_time_s': 11.459538221359253}
+2025-04-10 18:16:37,627 - INFO - Intentando lanzar: C:\Users\koska\OneDrive\Documentos\DOCUMENTOS_OSKAR\efootball_automation_mejorado_20250403_022745\src\template_manager_gui.py
+2025-04-10 18:16:37,637 - INFO - Gestor de Plantillas lanzado con PID: 9500
+2025-04-10 18:17:31,675 - INFO - CORRECCIÓN USUARIO: Detección fue 'unknown', estado correcto indicado: 'partido_jugando_jugar_estrategia'.
+2025-04-10 19:17:31,825 - INFO - Resultado Reconocimiento: {'method': 'template', 'state': 'partido_jugando_final', 'confidence': 0.8652662634849548, 'ocr_results': None, 'detection_time_s': 10.6509108543396}
+2025-04-10 19:17:35,285 - INFO - CONFIRMACIÓN USUARIO: Detección de 'partido_jugando_final' es CORRECTA.
+2025-04-10 19:17:51,582 - INFO - Resultado Reconocimiento: {'method': 'template', 'state': 'partido_jugando_final2', 'confidence': 0.9622205495834351, 'ocr_results': None, 'detection_time_s': 10.65478229522705}
+2025-04-10 19:17:54,388 - INFO - CONFIRMACIÓN USUARIO: Detección de 'partido_jugando_final2' es CORRECTA.
+2025-04-10 19:18:13,672 - INFO - Resultado Reconocimiento: {'method': 'template', 'state': 'partido_jugando_final_premio1', 'confidence': 0.9993454813957214, 'ocr_results': None, 'detection_time_s': 10.468118906021118}
+2025-04-10 19:18:15,636 - INFO - CONFIRMACIÓN USUARIO: Detección de 'partido_jugando_final_premio1' es CORRECTA.
+2025-04-10 19:18:29,871 - INFO - Resultado Reconocimiento: {'method': 'template', 'state': 'partido_jugando_final_pase_partido', 'confidence': 0.9674530625343323, 'ocr_results': None, 'detection_time_s': 10.059476137161255}
+2025-04-10 19:18:33,243 - INFO - CONFIRMACIÓN USUARIO: Detección de 'partido_jugando_final_pase_partido' es CORRECTA.
+2025-04-10 19:18:48,358 - INFO - Resultado Reconocimiento: {'method': 'template', 'state': 'partido_recompensa_puntos', 'confidence': 0.9802728295326233, 'ocr_results': None, 'detection_time_s': 10.116443157196045}
+2025-04-10 19:18:49,965 - INFO - CONFIRMACIÓN USUARIO: Detección de 'partido_recompensa_puntos' es CORRECTA.
+2025-04-10 19:19:04,787 - INFO - Resultado Reconocimiento: {'method': 'template', 'state': 'menu_eventos_IA_participando_0_puntos', 'confidence': 0.8915383815765381, 'ocr_results': None, 'detection_time_s': 9.733343839645386}
+2025-04-10 19:20:18,848 - INFO - Resultado Reconocimiento: {'method': 'template', 'state': 'menu_contrato_jugadores especiales', 'confidence': 0.7504797577857971, 'ocr_results': None, 'detection_time_s': 10.017452478408813}
+2025-04-10 19:20:20,820 - INFO - CONFIRMACIÓN USUARIO: Detección de 'menu_contrato_jugadores especiales' es CORRECTA.
+2025-04-10 19:21:39,212 - INFO - Resultado Reconocimiento: {'method': 'template', 'state': 'menu_contrato_directores', 'confidence': 0.7676330804824829, 'ocr_results': None, 'detection_time_s': 9.614691257476807}
+2025-04-10 19:21:42,012 - WARNING - NEGACIÓN USUARIO: Detección de 'menu_contrato_directores' es INCORRECTA.
+2025-04-10 19:21:59,442 - INFO - CORRECCIÓN USUARIO: Detección fue 'menu_contrato_directores', estado correcto indicado: 'menu_contrato_jugadores_normales'.

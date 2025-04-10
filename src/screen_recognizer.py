@@ -368,6 +368,15 @@ def save_json_mapping(mapping, file_path, file_desc="mapping"):
         # Evitar messagebox en este módulo de bajo nivel
         # messagebox.showerror("Error", f"Error al guardar {file_desc}: {e}")
         return False # Indicar fallo
+# --- Dentro de la clase ScreenRecognizer en screen_recognizer.py ---
+
+    def reload_data(self):
+        """Recarga los mappings JSON y las plantillas."""
+        logging.info("Recargando datos del reconocedor...")
+        self._load_all_data() # Reutiliza la función interna existente
+        logging.info("Datos del reconocedor recargados.")
+
+# ... (resto del código de screen_recognizer.py sin cambios) ...
 
 if __name__ == "__main__":
     print("Iniciando prueba del ScreenRecognizer...")

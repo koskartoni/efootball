@@ -257,6 +257,15 @@
             "top": 72,
             "width": 993,
             "height": 216
+        },
+        {
+            "region": {
+                "left": 1084,
+                "top": 57,
+                "width": 888,
+                "height": 254
+            },
+            "expected_text": []
         }
     ],
     "menu_eventos_IA": [
@@ -297,6 +306,15 @@
             "top": 1387,
             "width": 1612,
             "height": 528
+        },
+        {
+            "region": {
+                "left": 384,
+                "top": 1382,
+                "width": 1243,
+                "height": 494
+            },
+            "expected_text": []
         }
     ],
     "menu_eventos_IA_participando_0_puntos": [
@@ -343,6 +361,24 @@
             "top": 1900,
             "width": 2894,
             "height": 220
+        },
+        {
+            "region": {
+                "left": 936,
+                "top": 1896,
+                "width": 2836,
+                "height": 230
+            },
+            "expected_text": []
+        },
+        {
+            "region": {
+                "left": 1968,
+                "top": 1944,
+                "width": 369,
+                "height": 124
+            },
+            "expected_text": []
         }
     ],
     "partido_jugando_uniforme": [
@@ -351,6 +387,24 @@
             "top": 1886,
             "width": 3724,
             "height": 235
+        },
+        {
+            "region": {
+                "left": 955,
+                "top": 1948,
+                "width": 504,
+                "height": 115
+            },
+            "expected_text": []
+        },
+        {
+            "region": {
+                "left": 1992,
+                "top": 1963,
+                "width": 576,
+                "height": 100
+            },
+            "expected_text": []
         }
     ],
     "partido_jugando_jugar_estrategia": [
@@ -359,6 +413,33 @@
             "top": 1924,
             "width": 3705,
             "height": 211
+        },
+        {
+            "region": {
+                "left": 326,
+                "top": 350,
+                "width": 331,
+                "height": 81
+            },
+            "expected_text": []
+        },
+        {
+            "region": {
+                "left": 1483,
+                "top": 1958,
+                "width": 388,
+                "height": 110
+            },
+            "expected_text": []
+        },
+        {
+            "region": {
+                "left": 3340,
+                "top": 1963,
+                "width": 369,
+                "height": 110
+            },
+            "expected_text": []
         }
     ],
     "partido_jugando_final": [
@@ -533,6 +614,39 @@
             "top": 1675,
             "width": 331,
             "height": 105
+        }
+    ],
+    "menu_partido_eventos_sel": [
+        {
+            "region": {
+                "left": 1276,
+                "top": 1502,
+                "width": 1252,
+                "height": 427
+            },
+            "expected_text": []
+        }
+    ],
+    "menu_eventos_partido_estrategia_equipo_sel": [
+        {
+            "region": {
+                "left": 81,
+                "top": 1248,
+                "width": 676,
+                "height": 384
+            },
+            "expected_text": []
+        }
+    ],
+    "menu_eventos_partido_estrategia_equipo_lista_sel": [
+        {
+            "region": {
+                "left": 43,
+                "top": 288,
+                "width": 720,
+                "height": 969
+            },
+            "expected_text": []
         }
     ]
 }

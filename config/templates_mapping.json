@@ -278,5 +278,17 @@
     "menu_home_partido": [
         "menu_home_partido_20250410_133553.png",
         "menu_home_partido_20250410_134258.png"
+    ],
+    "menu_partido_eventos_sel": [
+        "menu_partido_eventos_sel_20250410_163915.png"
+    ],
+    "menu_eventos_partido_estrategia_equipo_sel": [
+        "menu_eventos_partido_estrategia_equipo_sel_20250410_181009.png"
+    ],
+    "menu_eventos_partido_estrategia_equipo_lista": [
+        "menu_eventos_partido_estrategia_equipo_lista_20250410_181155.png"
+    ],
+    "menu_eventos_partido_estrategia_equipo_lista_sel": [
+        "menu_eventos_partido_estrategia_equipo_lista_sel_20250410_181226.png"
     ]
 }
