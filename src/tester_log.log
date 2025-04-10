@@ -1,0 +1,68 @@
+2025-04-08 22:08:21,608 - INFO - Tester GUI inicializado.
+2025-04-08 22:08:36,429 - INFO - Resultado Reconocimiento: {'method': 'unknown', 'state': 'unknown', 'confidence': None, 'ocr_results': None, 'detection_time_s': 9.738224744796753}
+2025-04-08 22:14:33,493 - INFO - Tester GUI inicializado.
+2025-04-08 22:14:45,760 - INFO - Resultado Reconocimiento: {'method': 'unknown', 'state': 'unknown', 'confidence': None, 'ocr_results': None, 'detection_time_s': 9.429539442062378}
+2025-04-08 22:14:55,816 - INFO - Intentando lanzar: C:\Users\koska\OneDrive\Documentos\DOCUMENTOS_OSKAR\efootball_automation_mejorado_20250403_022745\src\template_manager_gui.py
+2025-04-08 22:14:55,826 - INFO - Gestor de Plantillas lanzado con PID: 28376
+2025-04-10 13:21:21,408 - INFO - Tester GUI inicializado.
+2025-04-10 13:21:35,118 - INFO - Resultado Reconocimiento: {'method': 'template', 'state': 'pantalla_bienvenida', 'confidence': 0.9952558279037476, 'ocr_results': None, 'detection_time_s': 8.840957403182983}
+2025-04-10 13:21:39,055 - INFO - CONFIRMACIÓN USUARIO: Detección de 'pantalla_bienvenida' es CORRECTA.
+2025-04-10 13:22:40,339 - INFO - Resultado Reconocimiento: {'method': 'unknown', 'state': 'unknown', 'confidence': None, 'ocr_results': None, 'detection_time_s': 9.476590633392334}
+2025-04-10 13:22:45,303 - INFO - Intentando lanzar: C:\Users\koska\OneDrive\Documentos\DOCUMENTOS_OSKAR\efootball_automation_mejorado_20250403_022745\src\template_manager_gui.py
+2025-04-10 13:22:45,313 - INFO - Gestor de Plantillas lanzado con PID: 26504
+2025-04-10 13:25:44,046 - INFO - Resultado Reconocimiento: {'method': 'unknown', 'state': 'unknown', 'confidence': None, 'ocr_results': None, 'detection_time_s': 8.980611085891724}
+2025-04-10 13:25:46,072 - INFO - Intentando lanzar: C:\Users\koska\OneDrive\Documentos\DOCUMENTOS_OSKAR\efootball_automation_mejorado_20250403_022745\src\template_manager_gui.py
+2025-04-10 13:25:46,082 - INFO - Gestor de Plantillas lanzado con PID: 23480
+2025-04-10 13:27:09,375 - INFO - Resultado Reconocimiento: {'method': 'unknown', 'state': 'unknown', 'confidence': None, 'ocr_results': None, 'detection_time_s': 8.975707530975342}
+2025-04-10 13:27:12,898 - INFO - Intentando lanzar: C:\Users\koska\OneDrive\Documentos\DOCUMENTOS_OSKAR\efootball_automation_mejorado_20250403_022745\src\template_manager_gui.py
+2025-04-10 13:27:12,908 - INFO - Gestor de Plantillas lanzado con PID: 18536
+2025-04-10 13:28:29,947 - INFO - Resultado Reconocimiento: {'method': 'unknown', 'state': 'unknown', 'confidence': None, 'ocr_results': None, 'detection_time_s': 8.991426229476929}
+2025-04-10 13:28:31,320 - INFO - Intentando lanzar: C:\Users\koska\OneDrive\Documentos\DOCUMENTOS_OSKAR\efootball_automation_mejorado_20250403_022745\src\template_manager_gui.py
+2025-04-10 13:28:31,330 - INFO - Gestor de Plantillas lanzado con PID: 5320
+2025-04-10 13:30:09,121 - INFO - Resultado Reconocimiento: {'method': 'unknown', 'state': 'unknown', 'confidence': None, 'ocr_results': None, 'detection_time_s': 9.36457085609436}
+2025-04-10 13:30:19,605 - INFO - Intentando lanzar: C:\Users\koska\OneDrive\Documentos\DOCUMENTOS_OSKAR\efootball_automation_mejorado_20250403_022745\src\template_manager_gui.py
+2025-04-10 13:30:19,614 - INFO - Gestor de Plantillas lanzado con PID: 13060
+2025-04-10 13:31:59,752 - INFO - Resultado Reconocimiento: {'method': 'ocr', 'state': 'menu_principal_home_seleccionado', 'confidence': None, 'ocr_results': {0: {'region': {'left': 744, 'top': 67, 'width': 2332, 'height': 206}, 'text': '1 1 Lo Home GY Misiones Tienda Extras'}}, 'detection_time_s': 10.106571912765503}
+2025-04-10 13:32:25,842 - INFO - CONFIRMACIÓN USUARIO: Detección de 'menu_principal_home_seleccionado' es CORRECTA.
+2025-04-10 13:32:43,731 - INFO - Resultado Reconocimiento: {'method': 'template', 'state': 'menu_misiones_selec', 'confidence': 0.9952989220619202, 'ocr_results': None, 'detection_time_s': 8.847506999969482}
+2025-04-10 13:32:48,131 - INFO - CONFIRMACIÓN USUARIO: Detección de 'menu_misiones_selec' es CORRECTA.
+2025-04-10 13:33:04,314 - INFO - Resultado Reconocimiento: {'method': 'template', 'state': 'menu_tienda_selec', 'confidence': 0.9533124566078186, 'ocr_results': None, 'detection_time_s': 9.369708776473999}
+2025-04-10 13:33:05,810 - INFO - CONFIRMACIÓN USUARIO: Detección de 'menu_tienda_selec' es CORRECTA.
+2025-04-10 13:33:18,537 - INFO - Resultado Reconocimiento: {'method': 'template', 'state': 'menu_extras_selec', 'confidence': 0.9901083707809448, 'ocr_results': None, 'detection_time_s': 8.897744178771973}
+2025-04-10 13:33:20,997 - INFO - CONFIRMACIÓN USUARIO: Detección de 'menu_extras_selec' es CORRECTA.
+2025-04-10 13:33:41,465 - INFO - Resultado Reconocimiento: {'method': 'template', 'state': 'menu_home_contrato', 'confidence': 0.8166620135307312, 'ocr_results': None, 'detection_time_s': 9.54923391342163}
+2025-04-10 13:33:46,274 - INFO - CONFIRMACIÓN USUARIO: Detección de 'menu_home_contrato' es CORRECTA.
+2025-04-10 13:33:59,594 - INFO - Resultado Reconocimiento: {'method': 'template', 'state': 'menu_home_mi_equipo', 'confidence': 0.82891446352005, 'ocr_results': None, 'detection_time_s': 9.045663595199585}
+2025-04-10 13:34:01,704 - INFO - CONFIRMACIÓN USUARIO: Detección de 'menu_home_mi_equipo' es CORRECTA.
+2025-04-10 13:34:14,080 - INFO - Resultado Reconocimiento: {'method': 'template', 'state': 'menu_home_premijuego', 'confidence': 0.8045860528945923, 'ocr_results': None, 'detection_time_s': 9.081624746322632}
+2025-04-10 13:34:15,517 - INFO - CONFIRMACIÓN USUARIO: Detección de 'menu_home_premijuego' es CORRECTA.
+2025-04-10 13:34:27,041 - INFO - Resultado Reconocimiento: {'method': 'template', 'state': 'menu_home_estrategia', 'confidence': 0.8558322191238403, 'ocr_results': None, 'detection_time_s': 9.091214418411255}
+2025-04-10 13:34:31,612 - INFO - CONFIRMACIÓN USUARIO: Detección de 'menu_home_estrategia' es CORRECTA.
+2025-04-10 13:34:42,381 - INFO - Resultado Reconocimiento: {'method': 'ocr', 'state': 'menu_principal_home_seleccionado', 'confidence': None, 'ocr_results': {0: {'region': {'left': 744, 'top': 67, 'width': 2332, 'height': 206}, 'text': 'Home Misiones Tienda Extras'}}, 'detection_time_s': 9.0856773853302}
+2025-04-10 13:34:52,445 - WARNING - NEGACIÓN USUARIO: Detección de 'menu_principal_home_seleccionado' es INCORRECTA.
+2025-04-10 13:34:54,968 - INFO - Intentando lanzar: C:\Users\koska\OneDrive\Documentos\DOCUMENTOS_OSKAR\efootball_automation_mejorado_20250403_022745\src\template_manager_gui.py
+2025-04-10 13:34:54,978 - INFO - Gestor de Plantillas lanzado con PID: 15244
+2025-04-10 13:36:26,961 - INFO - Resultado Reconocimiento: {'method': 'ocr', 'state': 'menu_home_estrategia', 'confidence': None, 'ocr_results': {0: {'region': {'left': 873, 'top': 1190, 'width': 729, 'height': 676}, 'text': 'Estrategia'}}, 'detection_time_s': 9.588245153427124}
+2025-04-10 13:36:43,727 - WARNING - NEGACIÓN USUARIO: Detección de 'menu_home_estrategia' es INCORRECTA.
+2025-04-10 13:36:49,028 - INFO - Intentando lanzar: C:\Users\koska\OneDrive\Documentos\DOCUMENTOS_OSKAR\efootball_automation_mejorado_20250403_022745\src\template_manager_gui.py
+2025-04-10 13:36:49,038 - INFO - Gestor de Plantillas lanzado con PID: 10780
+2025-04-10 13:37:47,282 - INFO - Resultado Reconocimiento: {'method': 'ocr', 'state': 'menu_home_estrategia', 'confidence': None, 'ocr_results': {0: {'region': {'left': 873, 'top': 1190, 'width': 729, 'height': 676}, 'text': 'Estrategia'}}, 'detection_time_s': 9.406673908233643}
+2025-04-10 13:38:11,215 - INFO - Tester GUI inicializado.
+2025-04-10 13:38:29,753 - INFO - Resultado Reconocimiento: {'method': 'ocr', 'state': 'menu_principal_home_seleccionado', 'confidence': None, 'ocr_results': {0: {'region': {'left': 744, 'top': 67, 'width': 2332, 'height': 206}, 'text': 'Home Misiones Tienda Extras'}}, 'detection_time_s': 10.333671808242798}
+2025-04-10 13:38:59,214 - INFO - Resultado Reconocimiento: {'method': 'template', 'state': 'menu_home_mi_equipo', 'confidence': 0.7721534967422485, 'ocr_results': None, 'detection_time_s': 10.011503458023071}
+2025-04-10 13:39:16,989 - INFO - Resultado Reconocimiento: {'method': 'ocr', 'state': 'menu_home_contrato', 'confidence': None, 'ocr_results': {0: {'region': {'left': 2227, 'top': 1224, 'width': 748, 'height': 614}, 'text': 'o Contrato'}}, 'detection_time_s': 9.785640716552734}
+2025-04-10 13:39:20,148 - WARNING - NEGACIÓN USUARIO: Detección de 'menu_home_contrato' es INCORRECTA.
+2025-04-10 13:39:24,534 - INFO - Intentando lanzar: C:\Users\koska\OneDrive\Documentos\DOCUMENTOS_OSKAR\efootball_automation_mejorado_20250403_022745\src\template_manager_gui.py
+2025-04-10 13:39:24,544 - INFO - Gestor de Plantillas lanzado con PID: 11568
+2025-04-10 13:40:23,591 - INFO - Resultado Reconocimiento: {'method': 'ocr', 'state': 'menu_principal_home_seleccionado', 'confidence': None, 'ocr_results': {0: {'region': {'left': 744, 'top': 67, 'width': 2332, 'height': 206}, 'text': 'Home Misiones Tienda Extras'}}, 'detection_time_s': 9.581733226776123}
+2025-04-10 13:40:30,698 - WARNING - NEGACIÓN USUARIO: Detección de 'menu_principal_home_seleccionado' es INCORRECTA.
+2025-04-10 13:40:41,163 - INFO - Resultado Reconocimiento: {'method': 'ocr', 'state': 'menu_home_estrategia', 'confidence': None, 'ocr_results': {0: {'region': {'left': 873, 'top': 1190, 'width': 729, 'height': 676}, 'text': 'Estrategia'}}, 'detection_time_s': 9.528422355651855}
+2025-04-10 13:40:45,715 - WARNING - NEGACIÓN USUARIO: Detección de 'menu_home_estrategia' es INCORRECTA.
+2025-04-10 13:40:48,816 - INFO - Intentando lanzar: C:\Users\koska\OneDrive\Documentos\DOCUMENTOS_OSKAR\efootball_automation_mejorado_20250403_022745\src\template_manager_gui.py
+2025-04-10 13:40:48,826 - INFO - Gestor de Plantillas lanzado con PID: 7792
+2025-04-10 13:41:25,363 - INFO - Resultado Reconocimiento: {'method': 'ocr', 'state': 'menu_home_estrategia', 'confidence': None, 'ocr_results': {0: {'region': {'left': 873, 'top': 1190, 'width': 729, 'height': 676}, 'text': 'Estrategia'}}, 'detection_time_s': 9.852141618728638}
+2025-04-10 13:41:29,098 - WARNING - NEGACIÓN USUARIO: Detección de 'menu_home_estrategia' es INCORRECTA.
+2025-04-10 13:41:43,556 - INFO - Intentando lanzar: C:\Users\koska\OneDrive\Documentos\DOCUMENTOS_OSKAR\efootball_automation_mejorado_20250403_022745\src\template_manager_gui.py
+2025-04-10 13:41:43,566 - INFO - Gestor de Plantillas lanzado con PID: 24560
+2025-04-10 13:44:15,250 - INFO - Resultado Reconocimiento: {'method': 'template', 'state': 'menu_home_mi_equipo', 'confidence': 0.7753597497940063, 'ocr_results': None, 'detection_time_s': 9.906982183456421}
+2025-04-10 13:44:27,126 - WARNING - NEGACIÓN USUARIO: Detección de 'menu_home_mi_equipo' es INCORRECTA.

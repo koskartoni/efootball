@@ -259,5 +259,24 @@
     ],
     "test2": [
         "test2_20250404_194259.png"
+    ],
+    "promocion_inicio": [
+        "promocion_inicio_20250410_132337.png"
+    ],
+    "bonus_inicio_sesion": [
+        "bonus_inicio_sesion_20250410_132615.png"
+    ],
+    "bonus_campa\u00f1a": [
+        "bonus_campa\u00f1a_20250410_132726.png"
+    ],
+    "pantalla_votacion": [
+        "pantalla_votacion_20250410_132901.png"
+    ],
+    "menu_inicio_banner_sel": [
+        "menu_inicio_banner_sel_20250410_133046.png"
+    ],
+    "menu_home_partido": [
+        "menu_home_partido_20250410_133553.png",
+        "menu_home_partido_20250410_134258.png"
     ]
 }
