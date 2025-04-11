@@ -276,8 +276,8 @@ class TemplateManagerGUI(tk.Tk):
 
     def create_widgets(self):
         # Configurar grid principal
-        self.grid_rowconfigure(2, weight=1) # Fila de los frames centrales se expande
-        self.grid_columnconfigure(0, weight=1) # Columna principal se expande
+        self.grid_rowconfigure(3, weight=1)
+        self.grid_columnconfigure(0, weight=1)
 
         self.create_capture_frame()
         self.create_template_selection_frame()
@@ -289,7 +289,7 @@ class TemplateManagerGUI(tk.Tk):
         center_frame.grid_columnconfigure(1, weight=1)
 
         self.create_preview_frame(center_frame)
-        self.create_ocr_config_frame(center_frame)
+        self.create_ocr_config_frame(center_frame)  # <<< Modificaremos esta función >>>
 
         self.create_status_label()
 
@@ -354,20 +354,34 @@ class TemplateManagerGUI(tk.Tk):
         """Crea el frame para la configuración de zonas OCR."""
         config_frame = ttk.LabelFrame(parent_frame, text="Configuración de Zona OCR", padding=(10, 5))
         config_frame.grid(row=0, column=1, padx=(5, 0), pady=5, sticky="nsew")
-        config_frame.grid_columnconfigure(0, weight=1)
+        config_frame.grid_columnconfigure(0, weight=1) # Columna 0 se expande
 
-        button_frame = ttk.Frame(config_frame)
-        button_frame.grid(row=0, column=0, pady=5, sticky="ew")
-        button_frame.grid_columnconfigure(0, weight=1)
+        # --- Widgets para marcar región ---
+        mark_region_frame = ttk.Frame(config_frame)
+        mark_region_frame.grid(row=0, column=0, pady=5, sticky="ew")
+        mark_region_frame.grid_columnconfigure(0, weight=1) # Centrar botón
 
-        ttk.Button(button_frame, text="Marcar Región OCR", command=self.mark_ocr_region).pack(pady=2)
-        ttk.Button(button_frame, text="Limpiar Zonas OCR", command=self.clear_ocr_regions).pack(pady=2)
+        ttk.Button(mark_region_frame, text="Marcar Región OCR", command=self.mark_ocr_region).pack(pady=2)
 
+        # --- <<< NUEVO: Entrada para Texto Esperado >>> ---
+        expected_text_frame = ttk.Frame(config_frame)
+        expected_text_frame.grid(row=1, column=0, pady=5, sticky="ew")
+        ttk.Label(expected_text_frame, text="Texto Esperado (opcional, separar con '|'):").pack(anchor="w", padx=5)
+        self.expected_text_var = tk.StringVar()
+        ttk.Entry(expected_text_frame, textvariable=self.expected_text_var, width=40).pack(fill="x", padx=5, pady=2)
+        # --------------------------------------------
+
+        # --- Label para mostrar zonas marcadas ---
         self.region_label = ttk.Label(config_frame, text="Zonas OCR: Ninguna definida", anchor="center")
-        self.region_label.grid(row=1, column=0, pady=5, sticky="ew")
+        self.region_label.grid(row=2, column=0, pady=5, sticky="ew")
 
-        save_button = ttk.Button(config_frame, text="Guardar Zonas OCR", command=self.save_ocr_regions)
-        save_button.grid(row=2, column=0, padx=5, pady=5)
+        # --- Botones de acción ---
+        action_frame = ttk.Frame(config_frame)
+        action_frame.grid(row=3, column=0, pady=5, sticky="ew")
+        action_frame.grid_columnconfigure(0, weight=1) # Centrar botones
+
+        ttk.Button(action_frame, text="Limpiar Zonas Marcadas", command=self.clear_ocr_regions).pack(side="left", padx=10)
+        ttk.Button(action_frame, text="Guardar Zonas OCR", command=self.save_ocr_regions).pack(side="left", padx=10)
 
     def create_status_label(self):
         """Crea el label para mensajes de estado."""
@@ -581,18 +595,17 @@ class TemplateManagerGUI(tk.Tk):
 
 
     def show_preview(self):
-        """Muestra la imagen en el canvas de previsualización y dibuja regiones OCR."""
-        # (Código de show_preview sin cambios respecto a la versión anterior con redimensionamiento)
+        """Muestra la imagen en el canvas y dibuja regiones OCR.
+           Ahora diferencia el color si tiene texto esperado."""
+        # ... (inicio igual: obtener tamaño canvas, limpiar) ...
         try:
             canvas_width = self.preview_label.winfo_width()
             canvas_height = self.preview_label.winfo_height()
         except tk.TclError:
             canvas_width = MIN_CANVAS_WIDTH
             canvas_height = MIN_CANVAS_HEIGHT
-
         if canvas_width < MIN_CANVAS_WIDTH: canvas_width = MIN_CANVAS_WIDTH
         if canvas_height < MIN_CANVAS_HEIGHT: canvas_height = MIN_CANVAS_HEIGHT
-
         self.preview_label.delete("all")
 
         if self.captured_image is None:
@@ -602,6 +615,7 @@ class TemplateManagerGUI(tk.Tk):
 
         img_rgb = cv2.cvtColor(self.captured_image, cv2.COLOR_BGR2RGB)
         pil_img = Image.fromarray(img_rgb)
+        # ... (lógica de redimensionamiento y centrado igual) ...
         img_aspect = pil_img.width / pil_img.height
         canvas_aspect = canvas_width / canvas_height
         if img_aspect > canvas_aspect:
@@ -619,36 +633,49 @@ class TemplateManagerGUI(tk.Tk):
         x_offset = (canvas_width - new_width) // 2
         y_offset = (canvas_height - new_height) // 2
         self.preview_label.create_image(x_offset, y_offset, anchor="nw", image=self.tk_img)
-        self.ocr_region_rects = []
+
+        # Dibujar regiones OCR (con color diferenciado)
         scale_x = new_width / self.captured_image.shape[1]
         scale_y = new_height / self.captured_image.shape[0]
-        for region in self.ocr_regions:
+        self.ocr_region_rects = []
+        for region_data in self.ocr_regions: # <<< Iterar sobre la estructura completa >>>
             try:
-                x1 = int(region['region']['left'] * scale_x) + x_offset # <<< ACCEDER A 'region' >>>
-                y1 = int(region['region']['top'] * scale_y) + y_offset
-                x2 = int((region['region']['left'] + region['region']['width']) * scale_x) + x_offset
-                y2 = int((region['region']['top'] + region['region']['height']) * scale_y) + y_offset
-                # Cambiar color si tiene texto esperado
-                outline_color = "purple" if region.get('expected_text') else "red"
+                region = region_data['region'] # Extraer coordenadas
+                expected_texts = region_data.get('expected_text', []) # Obtener textos esperados
+
+                x1 = int(region['left'] * scale_x) + x_offset
+                y1 = int(region['top'] * scale_y) + y_offset
+                x2 = int((region['left'] + region['width']) * scale_x) + x_offset
+                y2 = int((region['top'] + region['height']) * scale_y) + y_offset
+                # --- Cambiar color si tiene texto esperado ---
+                outline_color = "purple" if expected_texts else "red"
+                # ---------------------------------------------
                 rect_id = self.preview_label.create_rectangle(x1, y1, x2, y2, outline=outline_color, width=2, tags="ocr_region")
                 self.ocr_region_rects.append(rect_id)
             except KeyError:
-                logging.warning(f"Región OCR mal formada encontrada: {region}")
+                logging.warning(f"Región OCR mal formada encontrada: {region_data}")
             except Exception as e:
-                logging.error(f"Error dibujando región OCR {region}: {e}")
+                logging.error(f"Error dibujando región OCR {region_data}: {e}")
+
         self.preview_label.config(width=canvas_width, height=canvas_height)
 
     def mark_ocr_region(self):
-        """Abre ventana para seleccionar región OCR y la añade a la lista."""
+        """Abre ventana para seleccionar región OCR y la añade a la lista
+           junto con el texto esperado introducido."""
         if self.captured_image is None:
             messagebox.showerror("Error", "Primero carga o captura una imagen.")
             return
         region_coords = tk_select_ocr_region(self, self.captured_image, max_width=MAX_PREVIEW_WIDTH)
         if region_coords:
+            # Obtener texto esperado y dividirlo en una lista
+            expected_text_str = self.expected_text_var.get().strip()
+            expected_texts = [txt.strip() for txt in expected_text_str.split('|') if txt.strip()]
+
             # Añadir la región con la nueva estructura
-            self.ocr_regions.append({"region": region_coords, "expected_text": []})
+            self.ocr_regions.append({"region": region_coords, "expected_text": expected_texts})
+            self.expected_text_var.set("") # Limpiar campo después de añadir
             self.update_region_label()
-            self.show_preview()
+            self.show_preview() # Redibujar para mostrar (quizás con color diferente)
         else:
             messagebox.showinfo("Información", "No se seleccionó ninguna región.")
 
@@ -666,28 +693,30 @@ class TemplateManagerGUI(tk.Tk):
         self.show_preview()
 
     def save_ocr_regions(self):
-        """Guarda regiones OCR en ocr_regions.json."""
+        """Guarda las regiones OCR (con texto esperado) en ocr_regions.json."""
         template_name = self.template_name_var.get().strip()
         if not template_name:
             messagebox.showerror("Error", "Debes seleccionar un nombre de plantilla existente del Combobox.")
             return
+
+        # La lista self.ocr_regions ya tiene la estructura correcta {"region": ..., "expected_text": [...]}
         if not self.ocr_regions:
-            # Permitir guardar una lista vacía para eliminar regiones de una plantilla
             if messagebox.askyesno("Confirmar", f"¿Seguro que quieres eliminar TODAS las zonas OCR para '{template_name}'?"):
                  logging.info(f"Eliminando todas las regiones OCR para '{template_name}'.")
+                 # Guardar lista vacía
             else:
                  self.status_message("Guardado de zonas OCR cancelado.")
                  return
 
-        mapping = load_ocr_mapping()
-        mapping[template_name] = self.ocr_regions # Guardar la lista actual (puede estar vacía)
-        save_ocr_mapping(mapping) # Usar la función global
+        mapping = load_ocr_mapping() # Cargar mapping actual
+        mapping[template_name] = self.ocr_regions # Guardar/Sobreescribir con la lista actual
+        save_ocr_mapping(mapping) # Usar función global (que ya usa la ruta correcta)
         messagebox.showinfo("Éxito", f"Zonas OCR guardadas para '{template_name}'.")
         self.status_message(f"Zonas OCR guardadas para '{template_name}'.")
         self.current_template_name = template_name
-        # Actualizar el mapping en memoria
+        # Actualizar el mapping en memoria de esta instancia
         self.ocr_regions_mapping[template_name] = self.ocr_regions
-        # No limpiar automáticamente, el usuario puede querer seguir modificando
+        # Considerar limpiar self.ocr_regions o no, dependiendo del flujo deseado
         # self.clear_ocr_regions()
 
 
